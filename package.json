@@ -1,6 +1,6 @@
 {
   "name": "celli-berkeley",
-  "version": "0.0.0",
+  "version": "0.11.12-pre",
   "description": "",
   "main": "app.js",
   "dependencies": {
