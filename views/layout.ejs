@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <%-partial('partials/head.ejs')%>
+        <% include partials/head %>
     </head>
     <body>
 
         <!-- Header -->
-        <%-partial('partials/header.ejs')%>
+        <% include partials/header %>
 
         <!-- Nav Bar -->
-        <%-partial('partials/header.ejs')%>
+        <% include partials/navbar %>
 
         <div class="container">
             <%-body%>
         </div>
 
         <!-- Footer -->
-        <%-partial('partials/footer.ejs')%>
+        <% include partials/footer %>
 
     </body>
 </html>
