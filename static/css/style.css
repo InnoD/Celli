@@ -36,7 +36,7 @@
 
 /*---------- Nav Bar ---------------------------------------------------------*/
 .nav-div {
-	margin-top: 1em;
+	margin: 1em 0;
 	width: 100%;
 	text-align: center;
 	position: relative;
@@ -60,58 +60,57 @@
 
 	font-family: "Helvetica Neue", "Arial", "sans-serif";
 	font-size: 20px;
-	line-height: 2.8em;
 	text-transform: lowercase;
 	text-decoration: none;
 	letter-spacing: 3px;
-	font-weight: normal;
-	font-style: normal;
+	font-weight: 300;
 
 	background-color: #fff;
 
-	-webkit-padding-start: 0;
-	padding: 0 0.8em;
+	padding: 0 20px;
 }
 
 .nav-div nav ul > li {
-	font-size: 20px;
+	font-size: 22px;
 	line-height: 2.0em;
-	margin: 0.4em 0;
 	float: left;
 	position: relative;
+	text-align: center;
 }
 
 .nav-div nav li > a {
 	text-decoration: none;
-	width: 100%;
 	display: block;
+	padding: 0 60px;
 	background-color: #fff;
-	color: #000;
-	padding: 0 0.8em;
-	margin: 0 auto;
+	color: #4C292D;
 	text-align: center;
 }
 
+.nav-div nav ul > li:first-child a {
+	border-right: 1px solid #4C292D;
+}
+
+.nav-div nav ul > li:last-child a {
+	border-left: 1px solid #4C292D;
+}
+
 .nav-div nav li > a:hover {
-    background-color: #999;
-    color: #fff;
+    color: #C89C8B;
+    border-color: #C89C8B !important;
 }
 
-.nav-div .page-divider {
-	margin-top: -1.6em;
-	margin-bottom: 1.6em;
-	font-size: 20px;
-	border-bottom: 1px solid #000 !important;
+.borderl-none {
+	border-left: none !important;
 }
 
-.nav-div .midbar {
-	-webkit-user-select: none; /* Chrome/Safari */        
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+ */
-	-o-user-select: none;
-	user-select: none;
-	cursor: default;
-	margin: 0.4em 14px 0.4em 16px;
+.borderr-none {
+	border-right: none !important;
+}
+
+.borderlr-active {
+	border-left: 1px solid #4C292D;
+	border-right: 1px solid #4C292D;
 }
 
 /*----------------------------------------------------------------------------*/

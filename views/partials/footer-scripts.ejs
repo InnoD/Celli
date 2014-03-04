@@ -1,0 +1,20 @@
+<script>
+
+  var ul_len = $(".nav-ul li").children().length;
+  var index;
+
+  $(".nav-ul li").mouseenter(function() {
+    index = $(this).index() + 1;
+    if (index > 1 && index < ul_len) {
+        $(".nav-ul li:nth-child(" + (index - 1) + ") a").addClass('borderr-none');
+        $(".nav-ul li:nth-child(" + (index + 1) + ") a").addClass('borderl-none');
+        $(this).children("a").addClass('borderlr-active');
+    };
+  }).mouseleave(function () {
+      if (index > 1 && index < ul_len) {
+        $(".nav-ul li:nth-child(" + (index - 1) + ") a").removeClass('borderr-none');
+        $(".nav-ul li:nth-child(" + (index + 1) + ") a").removeClass('borderl-none');
+        $(this).children("a").removeClass('borderlr-active');
+    };
+  });
+</script>
