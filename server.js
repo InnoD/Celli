@@ -1,13 +1,9 @@
 var express = require('express'),
    partials = require('express-partials');
 var app = express();
-var md = require('node-markdown').Markdown;
 var ejs = require('ejs');
-var markedejs = require('markedejs');
 
 app.use(partials());
-// TODO: fix markdown
-// app.engine('.md', markedejs.__express);
 
 // Initialize main server
 app.use(express.json());
