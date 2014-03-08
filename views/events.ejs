@@ -13,23 +13,31 @@
     <h1>UPCOMING EVENTS &amp PERFORMANCES</h1>
   </div>
   <hr>
-  <div class="pure-g-r event-box">
-    <div class="pure-u-1 event-photo">
-    </div>
-    <div class="pure-u-1 event-info">
-      <h2>Sproul Plaza | March 5th | 12:00 PM</h2>
-      <h1><a href="http://www.google.com">CelliPOP on Sproul [Disney]!</a></h1>
-      <p>Are you ready to LET IT GO? Do you want NO WORRIES FOR THE REST OF YOUR DAY(S)? Drop by the shaded area in front of Wheeler all this **Wednesday** at noon to let Celli at Berkeley be PART OF YOUR WORLD! If you can't tell yet, we will be playing your favorite Disney tunes, with some TV show theme songs (Sherlock? Game of Thrones?) thrown in. **Warning: not for the weak of heart - may be too fabulous to handle.</p>
-    </div>
-  </div>
+  <% if (events.upcoming.length === 0) { %> 
+    <p>There are no upcoming events.</p>
+  <% } else { %>
+    <% for(var i in events.upcoming) { var event = events.upcoming[i]; %>
+      <div class="pure-g-r event-box">
+        <div class="pure-u-1 event-photo" style="background-image: url(<%=event.pic_url%>);">
+        </div>
+        <div class="pure-u-1 event-info">
+          <h2><%=event.location%> | <%=event.date%> | <%=event.time%></h2>
+          <h1><a href="http://www.facebook.com/event.php?eid=<%=event.id%>"><%=event.name%></a></h1>
+          <p><%=event.description%></p>
+        </div>
+      </div>
+    <% } %>
+  <% } %>
   <div class="section-header">
     <h1>PAST EVENTS &amp PERFORMANCES</h1>
   </div>
   <hr>
+  <% for(var i in events.past) { var event = events.past[i]; %>
   <div class="pure-g-r event-box">
     <div class="pure-u-1 event-info">
-      <h2>Sproul Plaza | March 5th | 12:00 PM</h2>
-      <h1>Event Name</h1>
+      <h2> <%=event.location%> | <%=event.date%> | <%=event.time%></h2>
+      <h1><a href="http://www.facebook.com/event.php?eid=<%=event.id%>"><%=event.name%></a></h1>
     </div>
   </div>
+  <% } %>
 </body>
