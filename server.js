@@ -59,7 +59,7 @@ function getEvents(){
         return;
       }
       try{
-        var ts = (new Date()).valueOf();
+        var ts = (new Date(2014, 1, 0, 0, 0, 0, 0)).valueOf();
         events = {'upcoming': [], 'past': []};
         // while(!fully_explored){
           data = JSON.parse(body);
@@ -69,7 +69,6 @@ function getEvents(){
           var event, date;
           for (var i in data) {
             event = data[i];
-            console.log(event.location);
             // More detailed query
             https.get({
               host: 'graph.facebook.com',
@@ -95,14 +94,13 @@ function getEvents(){
                 if( event.description != undefined ) {
                   event.description = event.description.replace(/(\r\n|\n|\r)/gm,' ');
                 }
-                event.pic_url = 'https://graph.facebook.com/' + event.id + '/picture?type=large';
+                // event.pic_url = 'https://graph.facebook.com/' + event.id + '/picture?type=large';
+                console.log(event.pic_url);
                 if(event.dateObj.valueOf() > ts) {
                   events['upcoming'].push(event);
                 } else {
                   events['past'].push(event);
                 }
-
-                console.log(event);
 
                 // sort events.
                 events['upcoming'].sort(asorter);
