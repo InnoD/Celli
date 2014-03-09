@@ -10,3 +10,9 @@
     text-decoration: none;
     color: #2fcc3a;
 }
+#kickstarter-music {
+    width: 480px;
+    height: 360px;
+    margin-left: auto;
+    margin-right: auto;
+}
