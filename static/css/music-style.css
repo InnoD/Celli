@@ -1,0 +1,12 @@
+#kickstarter-message > h1 {
+    font-family: "kreon";
+}
+#kickstarter-message > p {
+    font-family: kreon;
+    line-height: 36px;
+    font-size: 18px;
+}
+#kickstarter-message > p > a {
+    text-decoration: none;
+    color: #2fcc3a;
+}
