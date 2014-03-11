@@ -1,5 +1,4 @@
 <script>
-
   var ul_len = $(".nav-ul li").children().length;
   var index;
 
@@ -17,4 +16,71 @@
         $(this).children("a").removeClass('borderlr-active');
     };
   });
+
+  $(document).ready( function(){
+    var winWidth = $(window).width(),
+        constWinHeight = $(window).height(),
+        videoHeight = constWinHeight,
+        videoWidth = constWinHeight * (854/480),
+        videoLeft = (winWidth - videoWidth) / 2,
+        videoTop = 0;
+    if (videoWidth < winWidth) {
+      videoHeight = winWidth * (480/854);
+      videoWidth = winWidth;
+      videoLeft = 0;
+      videoTop = (constWinHeight - videoHeight);
+    }
+
+    $('#splash-container').css({
+      width: '100%',
+      height: constWinHeight
+    });
+    $('#video').css({
+      width: videoWidth,
+      height: videoHeight,
+      left: videoLeft,
+      top: videoTop
+    });
+
+    $(window).scroll( function(){
+      var scrollY = $(window).scrollTop();
+      if (scrollY > constWinHeight / 2) {
+        $( "#toolbar" ).fadeIn();
+      } else {
+        $( "#toolbar" ).fadeOut();
+      }
+    });
+
+    $(window).resize( function() {
+      var resizeWinWidth = $(window).width(),
+          videoLeft = (resizeWinWidth - videoWidth) / 2;
+      if (videoWidth < resizeWinWidth) {
+        videoHeight = resizeWinWidth * (480/854);
+        videoWidth = resizeWinWidth;
+        videoLeft = 0;
+        videoTop = (constWinHeight - videoHeight);
+      }
+      $('#video').css({
+        width: videoWidth,
+        height: videoHeight,
+        left: videoLeft,
+        top: videoTop
+      });
+    });
+  });
+
+
+  $(".nav-ul li a").click(function () {
+     var title = $(this).text();
+     History.pushState({state: this.href}, title, this.href);
+     return false;
+  });
+
+  History.Adapter.bind(window,'statechange',function(){
+    var state = History.getState();
+    var scrollPos = $(document).scrollTop();
+    $('#ajax-body-wrapper').load(state.cleanUrl + ' #ajax-body-wrapper > *');
+    scrollPos = $(document).scrollTop(scrollPos);
+  });
 </script>
+<script src="//vjs.zencdn.net/4.4/video.js"></script>

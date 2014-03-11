@@ -5,20 +5,25 @@
     </head>
     <body>
 
+        <!-- HTML5 Splash -->
+        <% include partials/splash %>
+
         <!-- Header -->
         <% include partials/header %>
 
         <!-- Nav Bar -->
         <% include partials/navbar %>
 
-        <div class="container">
-            <%-body%>
+        <div id="ajax-body-wrapper">
+            <div class="container">
+                <%-body%>
+            </div>
         </div>
-
-        <!-- Footer -->
-        <% include partials/footer %>
 
         <!-- Footer Scripts -->
         <% include partials/footer-scripts %>
+
+        <!-- Footer -->
+        <% include partials/footer %>
     </body>
 </html>

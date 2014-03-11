@@ -1,5 +1,10 @@
 /*-------- Site Wide ----------------------------------------------------------*/
 
+@font-face { 
+	font-family: 'ArcherPro-Light'; 
+	src: url('font/ArcherPro-Light.ttf') format(true-type); 
+} 
+
 .container {
 	padding: 0 15px;
 	margin: 0 auto;
@@ -114,3 +119,82 @@
 }
 
 /*----------------------------------------------------------------------------*/
+
+/*---------- Splash ----------------------------------------------------------*/
+.splash-container {
+	position: relative;
+	z-index: -1;
+}
+#video-container {
+	z-index: 0;
+}
+#video {
+	position: absolute;
+	top: 0;
+	left: 0;
+    z-index: 10;
+}
+#photoSplash{
+	position: absolute;
+	display: block;
+	z-index: 1;
+	top: 0px;
+	left:-100px;
+	right: 0px;
+	height: 800px;
+	display:none;
+}
+.blur { 
+	-webkit-filter: blur(5px); 
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px); 
+	-ms-filter: blur(5px);
+	filter: blur(5px); 
+}
+#mini-title{
+	text-align: center;
+	position: absolute;
+	color: #e1a739;
+	font-size: 1000%;
+	z-index: 15;
+	padding-top: 15%;
+	margin-left: 10%;
+	font-family: 'Pacifico';
+}
+
+#logo{
+	z-index: 10;
+	position: relative;
+	margin-left: 200px;
+	display: none;
+
+}
+#toolbar{
+    height: 80px;
+	width: 149%;
+    background: #e1a739;
+	position:  fixed;
+	z-index: 30;
+	top: 0px;
+	left: 0px;
+	right:0px;
+	display: none;
+}
+#menuStuff{
+	position: absolute;
+	margin-left: 100px;
+	margin-top: 20px;
+}
+.menuItem{
+	padding-left: 150px;
+	font-size: 200%;
+	text-align: center;
+	display: inline;
+	color: white;
+	font-family: 'ArcherPro-Light';
+}
+
+/*----------------------------------------------------------------------------*/
+
+
+

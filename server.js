@@ -149,6 +149,10 @@ app.get('/', function(req, res){
     res.render('home', {page: 'home'});
 });
 
+app.get('/home', function(req, res){
+    res.render('home', {page: 'home'});
+});
+
 app.get('/events', function(req, res){
     res.render('events', {page: 'events', events: events});
 });
