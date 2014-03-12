@@ -80,7 +80,7 @@ a {
 }
 
 .profilePic {    
-    position:absolute;
+    position:relative;
     left:0;
     top:0;
     width: 235px;
@@ -89,7 +89,7 @@ a {
 
 .blurb {
     z-index:100;
-    position:absolute;    
+    position:relative;    
     color:white;
     font-size:16px;
     /*font-weight:bold;*/
@@ -134,7 +134,7 @@ a {
 
 .text {
     z-index:100;
-    position:absolute;    
+    position:relative;    
     color: white;
     font-size:24px;
     top:90px;
@@ -146,7 +146,7 @@ a {
 
 .textTwo {
     z-index:100;
-    position:absolute;    
+    position:relative;    
     color:white;
     font-size:24px;
     top:600px;
