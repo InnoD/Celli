@@ -2,6 +2,10 @@
   var ul_len = $(".nav-ul li").children().length;
   var index;
 
+  $('#video').bind('load', function() {
+    $(this).fadeIn(); 
+  });
+
   $(".nav-ul li").mouseenter(function() {
     index = $(this).index() + 1;
     if (index > 1 && index < ul_len) {

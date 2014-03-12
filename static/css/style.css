@@ -1,5 +1,9 @@
 /*-------- Site Wide ----------------------------------------------------------*/
 
+body {
+	margin: 0;
+}
+
 @font-face { 
 	font-family: 'ArcherPro-Light'; 
 	src: url('font/ArcherPro-Light.ttf') format(true-type); 
@@ -121,9 +125,10 @@
 /*----------------------------------------------------------------------------*/
 
 /*---------- Splash ----------------------------------------------------------*/
-.splash-container {
+#splash-container {
 	position: relative;
-	z-index: -1;
+	z-index: 5;
+	background-color: black;
 }
 #video-container {
 	z-index: 0;
@@ -132,7 +137,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-    z-index: 10;
+    z-index: 5;
 }
 #photoSplash{
 	position: absolute;
