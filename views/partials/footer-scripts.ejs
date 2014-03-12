@@ -44,11 +44,11 @@
         at_splash = false;
         if (!scrollingTo) {
           if (!prev_hist_state) {
-            History.pushState({state: '/about'}, 
+            History.replaceState({state: '/about'}, 
                               'About · Celli @ Berkeley', 
                               '/about');
           } else {
-            History.pushState({state: prev_hist_state.url},
+            History.replaceState({state: prev_hist_state.url},
                               prev_hist_state.title + ' · Celli @ Berkeley',
                               prev_hist_state.url);
           }
@@ -60,7 +60,7 @@
           return;
         }
         prev_hist_state = History.getState();
-        History.pushState({state: '/'}, 'Celli @ Berkeley', '/');
+        History.replaceState({state: '/'}, 'Celli @ Berkeley', '/');
         at_splash = true;
 
       } else {
