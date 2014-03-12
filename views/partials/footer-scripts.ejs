@@ -2,25 +2,6 @@
   var ul_len = $(".nav-ul li").children().length;
   var index;
 
-  $('#video').bind('load', function() {
-    $(this).fadeIn(); 
-  });
-
-  $(".nav-ul li").mouseenter(function() {
-    index = $(this).index() + 1;
-    if (index > 1 && index < ul_len) {
-        $(".nav-ul li:nth-child(" + (index - 1) + ") a").addClass('borderr-none');
-        $(".nav-ul li:nth-child(" + (index + 1) + ") a").addClass('borderl-none');
-        $(this).children("a").addClass('borderlr-active');
-    };
-  }).mouseleave(function () {
-      if (index > 1 && index < ul_len) {
-        $(".nav-ul li:nth-child(" + (index - 1) + ") a").removeClass('borderr-none');
-        $(".nav-ul li:nth-child(" + (index + 1) + ") a").removeClass('borderl-none');
-        $(this).children("a").removeClass('borderlr-active');
-    };
-  });
-
   $(document).ready( function(){
     var winWidth = $(window).width(),
         constWinHeight = $(window).height(),
@@ -39,6 +20,42 @@
       width: '100%',
       height: constWinHeight
     });
+    $('#video').hide();
+    $('#mini-title').hide();
+
+    /*--- Nav Show/Hide ------------------------------------------------------*/
+    var main_nav_show = function () {
+      console.log('show')
+      $('#splash-menu').stop().fadeOut('fast');
+      $('#main-nav').animate({
+        top: 0
+      }, { duration: 200, queue: false });
+    }
+    var main_nav_hide = function () {
+      console.log('hide')
+      $('#splash-menu').stop().fadeIn('fast');
+      $('#main-nav').animate({
+        top: -70
+      }, { duration: 200, queue: false });
+    }
+    var main_nav_active = false;
+    $(document).scroll( function() {
+      var scrollY = $(document).scrollTop();
+      if (scrollY > (constWinHeight/2)) {
+        if (main_nav_active) {
+          return;
+        }
+        main_nav_active = true;
+        main_nav_show();
+      } else {
+        if (!main_nav_active) {
+          return;
+        }
+        main_nav_active = false;
+        main_nav_hide();
+      }
+    });
+    /*------------------------------------------------------------------------*/
 
     $(window).resize( function() {
       var resizeWinWidth = $(window).width(),
@@ -67,11 +84,14 @@
       });
     });
 
-    $(window).trigger('resize');
+    setTimeout(function(){ 
+      $(window).trigger('resize');
+      $('#mini-title').add('#video').fadeIn('slow');
+    }, 250);
   });
 
 
-  $(".nav-ul li a").click(function () {
+  $("#main-nav li a").click(function () {
      var title = $(this).text();
      History.pushState({state: this.href}, title, this.href);
      return false;

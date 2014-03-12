@@ -1,7 +1,30 @@
 /*-------- Site Wide ----------------------------------------------------------*/
 
+[hidden] {
+  display: none;
+}
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
 	margin: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
 }
 
 @font-face { 
@@ -32,6 +55,10 @@ body {
 	}
 }
 
+.hidden {
+	visibility: hidden;
+}
+
 /*----------------------------------------------------------------------------*/
 
 /*-------- Header ------------------------------------------------------------*/
@@ -44,28 +71,28 @@ body {
 /*----------------------------------------------------------------------------*/
 
 /*---------- Nav Bar ---------------------------------------------------------*/
-.nav-div {
-	margin: 1em 0;
-	width: 100%;
+#main-nav {
 	text-align: center;
-	position: relative;
-	float: left;
-	display: block;
-}
-
-.nav-div nav {
-	display: inline-block;
-	float: left;
 	width: 100%;
-	text-align: center;
-}
-
-.nav-div nav ul {
-	width: auto;
-	margin: auto;
-	display: inline-block;
+	height: 70px;
+	background: #e1a739;
 	list-style: none;
-	list-style-image: none;
+	z-index: 100;
+	position: fixed;
+	top: -70pxs;
+}
+#main-nav li {
+	margin: 0 20px;
+	display: inline-block;
+	height: 100%;
+}
+#main-nav li a {
+	text-decoration: none;
+	display: block;
+	padding: 0 60px;
+	color: #4C292D;
+	text-align: center;
+	line-height: 70px;
 
 	font-family: "Helvetica Neue", "Arial", "sans-serif";
 	font-size: 20px;
@@ -73,53 +100,14 @@ body {
 	text-decoration: none;
 	letter-spacing: 3px;
 	font-weight: 300;
-
-	background-color: #fff;
-
-	padding: 0 20px;
 }
 
-.nav-div nav ul > li {
-	font-size: 22px;
-	line-height: 2.0em;
-	float: left;
-	position: relative;
-	text-align: center;
-}
+/*----------------------------------------------------------------------------*/
 
-.nav-div nav li > a {
-	text-decoration: none;
-	display: block;
-	padding: 0 60px;
-	background-color: #fff;
-	color: #4C292D;
-	text-align: center;
-}
+/*---------- Body ------------------------------------------------------------*/
 
-.nav-div nav ul > li:first-child a {
-	border-right: 1px solid #4C292D;
-}
-
-.nav-div nav ul > li:last-child a {
-	border-left: 1px solid #4C292D;
-}
-
-.nav-div nav li > a:hover {
-    color: #C89C8B;
-    border-color: #C89C8B !important;
-}
-
-.borderl-none {
-	border-left: none !important;
-}
-
-.borderr-none {
-	border-right: none !important;
-}
-
-.borderlr-active {
-	border-left: 1px solid #4C292D;
-	border-right: 1px solid #4C292D;
+#ajax-body-wrapper {
+	min-height: 1080px;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -156,13 +144,17 @@ body {
 	-ms-filter: blur(5px);
 	filter: blur(5px); 
 }
-#mini-title{
+#mini-title {
 	text-align: center;
 	position: absolute;
-	color: #e1a739;
-	font-size: 12em;
 	z-index: 15;
+}
+
+#mini-title > h1 {
 	font-family: 'Pacifico';
+	color: #e1a739;
+	font-size: 1em;
+	font-weight: 300;
 }
 
 #logo{
@@ -183,6 +175,39 @@ body {
 	right:0px;
 	display: none;
 }
+#splash-menu {
+	text-align: center;
+	width: 100%;
+	height: 70px;
+	background: #e1a739;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	list-style: none;
+	z-index: 100;
+}
+
+#splash-menu li {
+	margin: 0 20px;
+	display: inline-block;
+	height: 100%;
+}
+#splash-menu li a {
+	text-decoration: none;
+	display: block;
+	padding: 0 60px;
+	color: #4C292D;
+	text-align: center;
+	line-height: 70px;
+
+	font-family: "Helvetica Neue", "Arial", "sans-serif";
+	font-size: 20px;
+	text-transform: lowercase;
+	text-decoration: none;
+	letter-spacing: 3px;
+	font-weight: 300;
+}
+
 #menuStuff{
 	position: absolute;
 	margin-left: 100px;
