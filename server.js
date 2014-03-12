@@ -146,11 +146,11 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
 app.get('/', function(req, res){
-    res.render('home', {page: 'home'});
+    res.render('about', {page: 'about'});
 });
 
-app.get('/home', function(req, res){
-    res.render('home', {page: 'home'});
+app.get('/about', function(req, res){
+    res.render('about', {page: 'about'});
 });
 
 app.get('/events', function(req, res){

@@ -35,6 +35,7 @@ ul {
 .container {
 	padding: 0 15px;
 	margin: 0 auto;
+	min-height: 1080px;
 }
 
 @media (min-width: 1200px) {
