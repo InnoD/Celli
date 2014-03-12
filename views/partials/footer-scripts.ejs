@@ -1,19 +1,18 @@
 <script>
-  var ul_len = $(".nav-ul li").children().length;
-  var index;
 
+  var at_splash = false;
+  var hist_state = History.getState();
+  var prev_hist_state;
+  var scrollingTo = false;
+
+  /*--- Document Ready -------------------------------------------------------*/
   $(document).ready( function(){
-    var winWidth = $(window).width(),
-        constWinHeight = $(window).height(),
-        videoHeight = constWinHeight,
-        videoWidth = constWinHeight * (854/480),
-        videoLeft = (winWidth - videoWidth) / 2,
-        videoTop = 0;
-    if (videoWidth < winWidth) {
-      videoHeight = winWidth * (480/854);
-      videoWidth = winWidth;
-      videoLeft = 0;
-      videoTop = (constWinHeight - videoHeight);
+    var constWinHeight = $(window).height();
+
+    if (hist_state.url.slice(-1) != '/') {
+      $(window).scrollTop(constWinHeight - 70);
+    } else {
+      at_splash = true;
     }
 
     $('#splash-container').css({
@@ -23,57 +22,81 @@
     $('#video').hide();
     $('#mini-title').hide();
 
-    /*--- Nav Show/Hide ------------------------------------------------------*/
-    var main_nav_show = function () {
-      console.log('show')
-      $('#splash-menu').stop().fadeOut('fast');
-      $('#main-nav').animate({
-        top: 0
-      }, { duration: 200, queue: false });
-    }
-    var main_nav_hide = function () {
-      console.log('hide')
-      $('#splash-menu').stop().fadeIn('fast');
-      $('#main-nav').animate({
-        top: -70
-      }, { duration: 200, queue: false });
-    }
-    var main_nav_active = false;
+    /*--- Nav Fixing & URL Management ----------------------------------------*/
+    var nav_fixed = false;
+
     $(document).scroll( function() {
       var scrollY = $(document).scrollTop();
-      if (scrollY > (constWinHeight/2)) {
-        if (main_nav_active) {
+      if (scrollY > (constWinHeight - 70)) {
+
+        if (nav_fixed) {
           return;
         }
-        main_nav_active = true;
-        main_nav_show();
+        nav_fixed = true;
+        $('#main-nav').css({
+          position: 'fixed',
+          top: 0,
+          bottom: ''
+        });
+
+        at_splash = false;
+        if (!scrollingTo) {
+          if (!prev_hist_state) {
+            History.pushState({state: '/home'}, 
+                              'Home · Celli @ Berkeley', 
+                              '/home');
+          } else {
+            History.pushState({state: prev_hist_state.url},
+                              prev_hist_state.title + ' · Celli @ Berkeley',
+                              prev_hist_state.url);
+          }
+        }
+
+      } else if (scrollY < 200) {
+
+        if (at_splash || scrollingTo) {
+          return;
+        }
+        prev_hist_state = History.getState();
+        History.pushState({state: '/'}, 'Celli @ Berkeley', '/');
+        at_splash = true;
+
       } else {
-        if (!main_nav_active) {
+
+        if (!nav_fixed) {
           return;
         }
-        main_nav_active = false;
-        main_nav_hide();
+        nav_fixed = false;
+        $('#main-nav').css({
+          position: 'absolute',
+          top: '',
+          bottom: 0
+        });
+
       }
     });
-    /*------------------------------------------------------------------------*/
 
+    /*--- Video/Title Resizing -----------------------------------------------*/
     $(window).resize( function() {
       var resizeWinWidth = $(window).width(),
-          videoLeft = (resizeWinWidth - videoWidth) / 2;
+          videoWidth = constWinHeight * (854/480),
+          videoHeight = constWinHeight,
+          videoLeft = (resizeWinWidth - videoWidth),
+          videoTop = 0;
       if (videoWidth < resizeWinWidth) {
-        videoHeight = resizeWinWidth * (480/854);
         videoWidth = resizeWinWidth;
+        videoHeight = resizeWinWidth * (480/854);
         videoLeft = 0;
         videoTop = (constWinHeight - videoHeight);
       }
       $('#mini-title').css({
           'font-size': resizeWinWidth * (15/1920) + 'em'
       }).promise().done(function () {
-        titleWidth = $('#mini-title').width();
-        titleHeight = $('#mini-title').height();
+        var titleWidth = $('#mini-title').width();
+        var titleHeight = $('#mini-title').height();
         $('#mini-title').css({
             left: (resizeWinWidth - titleWidth) / 2,
-            top: (constWinHeight - titleHeight) / 2 - 90
+            top: (constWinHeight - titleHeight) / 2 - 100
         });
       });
       $('#video').css({
@@ -84,27 +107,50 @@
       });
     });
 
+    /*--- Video/Title Fade ---------------------------------------------------*/
     setTimeout(function(){ 
       $(window).trigger('resize');
       $('#mini-title').add('#video').fadeIn('slow');
     }, 250);
   });
+  /*--- End Document Ready ---------------------------------------------------*/
 
+  var linkClicked = false;
 
   $("#main-nav li a").click(function () {
      var title = $(this).text();
-     History.pushState({state: this.href}, title, this.href);
+     linkClicked = true;
+     History.pushState({state: this.href}, 
+                       title + ' · Celli @ Berkeley', 
+                       this.href);
      return false;
   });
 
-  History.Adapter.bind(window, 'statechange' ,function() {
-    var state = History.getState();
+  var scrollToContent = function(scrollPos) {
+    var windowHeight = $(window).height();
+    if (scrollPos < windowHeight) {
+      scrollingTo = true;
+      $.scrollTo(windowHeight - 70, 'fast', function() {
+        scrollingTo = false;
+        console.log('done scrolling')
+      });
+    } else {
+      $(window).scrollTop(scrollPos);
+    }
+  }
+
+  History.Adapter.bind(window, 'statechange' , function() {
+    if (!linkClicked) {
+      return;
+    }
+    at_splash = false;
+    linkClicked = false;
     var scrollPos = $(document).scrollTop();
+    var state = History.getState();
     $('#ajax-body-wrapper').load(state.cleanUrl + ' #ajax-body-wrapper > *', function() {
-      $(document).scrollTop(scrollPos);
+        scrollToContent(scrollPos);
     });
   });
-
 
 </script>
 <script src="//vjs.zencdn.net/4.4/video.js"></script>
