@@ -1,5 +1,5 @@
 var express = require('express'),
-  partials = require('express-partials');
+   partials = require('express-partials');
 var app = express();
 var ejs = require('ejs');
 var https = require('https');
