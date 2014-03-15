@@ -107,7 +107,7 @@ function getEvents(){
                 events['past'].sort(dsorter);
               });
             });
-          // }
+          }
           // if (paging != undefined && paging.next != undefined){
           //   console.log(paging);
           //   https.get(paging.next, function(res){
@@ -124,7 +124,7 @@ function getEvents(){
           //   console.log('hihi');
           //   fully_explored = true;
           // }
-        }
+          // }
       } catch(e) {
         return;
       }
