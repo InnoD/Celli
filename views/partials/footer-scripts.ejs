@@ -1,20 +1,159 @@
 <script>
 
-  var ul_len = $(".nav-ul li").children().length;
-  var index;
+  var at_splash = false;
+  var hist_state = History.getState();
+  var prev_hist_state;
+  var scrollingTo = false;
 
-  $(".nav-ul li").mouseenter(function() {
-    index = $(this).index() + 1;
-    if (index > 1 && index < ul_len) {
-        $(".nav-ul li:nth-child(" + (index - 1) + ") a").addClass('borderr-none');
-        $(".nav-ul li:nth-child(" + (index + 1) + ") a").addClass('borderl-none');
-        $(this).children("a").addClass('borderlr-active');
-    };
-  }).mouseleave(function () {
-      if (index > 1 && index < ul_len) {
-        $(".nav-ul li:nth-child(" + (index - 1) + ") a").removeClass('borderr-none');
-        $(".nav-ul li:nth-child(" + (index + 1) + ") a").removeClass('borderl-none');
-        $(this).children("a").removeClass('borderlr-active');
-    };
+  /*--- Document Ready -------------------------------------------------------*/
+  $(document).ready( function(){
+    var constWinHeight = $(window).height();
+
+    /*--- URL Management & Scroll Position -----------------------------------*/
+    if (hist_state.url.slice(-1) != '/') {
+      $(window).scrollTop(constWinHeight - 70);
+    } else {
+      at_splash = true;
+    }
+
+    $('#splash-container').css({
+      width: '100%',
+      height: constWinHeight
+    });
+    $('#video').hide();
+    $('#mini-title').hide();
+
+    /*--- Nav Fixing & URL Management ----------------------------------------*/
+    var nav_fixed = false;
+
+    $(document).scroll( function() {
+      var scrollY = $(document).scrollTop();
+      if (scrollY > (constWinHeight - 70)) {
+
+        if (nav_fixed) {
+          return;
+        }
+        nav_fixed = true;
+        $('#main-nav').css({
+          position: 'fixed',
+          top: 0,
+          bottom: ''
+        });
+
+        if (!at_splash) { return; }
+        at_splash = false;
+        if (!scrollingTo) {
+          if (!prev_hist_state) {
+            History.replaceState({state: '/about'}, 
+                              'About · Celli @ Berkeley', 
+                              '/about');
+          } else {
+            History.replaceState({state: prev_hist_state.url},
+                              prev_hist_state.title,
+                              prev_hist_state.url);
+          }
+        }
+
+      } else if (scrollY < 200) {
+
+        if (at_splash || scrollingTo) {
+          return;
+        }
+        prev_hist_state = History.getState();
+        History.replaceState({state: '/'}, 'Celli @ Berkeley', '/');
+        at_splash = true;
+
+      } else {
+
+        if (!nav_fixed) {
+          return;
+        }
+        nav_fixed = false;
+        $('#main-nav').css({
+          position: 'absolute',
+          top: '',
+          bottom: 0
+        });
+
+      }
+    });
+
+    /*--- Video/Title Resizing -----------------------------------------------*/
+    $(window).resize( function() {
+      var resizeWinWidth = $(window).width(),
+          videoWidth = constWinHeight * (854/480),
+          videoHeight = constWinHeight,
+          videoLeft = (resizeWinWidth - videoWidth),
+          videoTop = 0;
+      if (videoWidth < resizeWinWidth) {
+        videoWidth = resizeWinWidth;
+        videoHeight = resizeWinWidth * (480/854);
+        videoLeft = 0;
+        videoTop = (constWinHeight - videoHeight);
+      }
+      $('#mini-title').css({
+          'font-size': resizeWinWidth * (15/1920) + 'em'
+      }).promise().done(function () {
+        var titleWidth = $('#mini-title').width();
+        var titleHeight = $('#mini-title').height();
+        $('#mini-title').css({
+            left: (resizeWinWidth - titleWidth) / 2,
+            top: (constWinHeight - titleHeight) / 2 - 100
+        });
+      });
+      $('#video').css({
+        width: videoWidth,
+        height: videoHeight,
+        left: videoLeft,
+        top: videoTop
+      });
+    });
+
+    /*--- Video/Title Fade ---------------------------------------------------*/
+    setTimeout(function(){ 
+      $(window).trigger('resize');
+      $('#mini-title').add('#video').fadeIn('slow');
+    }, 250);
   });
+  /*--- End Document Ready ---------------------------------------------------*/
+
+  /*--- URL Management -------------------------------------------------------*/
+  var linkClicked = false;
+  $("#main-nav li a").click(function () {
+     var title = $(this).text();
+     linkClicked = true;
+     History.pushState({state: this.href}, 
+                       title + ' · Celli @ Berkeley', 
+                       this.href);
+     return false;
+  });
+
+  var scrollToContent = function(scrollPos) {
+    var windowHeight = $(window).height();
+    if (scrollPos < windowHeight) {
+      scrollingTo = true;
+      $.scrollTo(windowHeight - 70, 'fast', function() {
+        scrollingTo = false;
+        console.log('done scrolling')
+      });
+    } else {
+      $(window).scrollTop(scrollPos);
+    }
+  }
+
+  History.Adapter.bind(window, 'statechange' , function() {
+    if (!linkClicked) {
+      return;
+    }
+    at_splash = false;
+    linkClicked = false;
+    var scrollPos = $(document).scrollTop();
+    var state = History.getState();
+    $('#ajax-body-wrapper').load(state.cleanUrl + ' #ajax-body-wrapper > *', 
+      function() {
+        scrollToContent(scrollPos);
+      });
+  });
+
 </script>
+<script src="//vjs.zencdn.net/4.4/video.js"></script>

@@ -4,7 +4,7 @@
   "description": "Celli @ Berkeley website",
   "main": "app.js",
   "dependencies": {
-    "express": "^3.4.8",
+    "express": "^3.5.0",
     "markedejs": "^0.1.0",
     "node-markdown": "^0.1.1",
     "ejs": "^0.8.5",

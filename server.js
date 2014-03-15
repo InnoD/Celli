@@ -47,7 +47,7 @@ function formatDate(date) {
 function getEvents(){
   https.get({
     host: 'graph.facebook.com',
-    path: '/466093040128127/events?access_token=658413130906919|jq0oT6M9dcNBf_a6EGXbpNHrWI4'
+    path: '/386927114743088/events?access_token=658413130906919|jq0oT6M9dcNBf_a6EGXbpNHrWI4'
   }, function(res){
     var body = "";
     var fully_explored = false;
@@ -94,8 +94,7 @@ function getEvents(){
                 if( event.description != undefined ) {
                   event.description = event.description.replace(/(\r\n|\n|\r)/gm,' ');
                 }
-                // event.pic_url = 'https://graph.facebook.com/' + event.id + '/picture?type=large';
-                console.log(event.pic_url);
+                event.pic_url = event.cover.source;
                 if(event.dateObj.valueOf() > ts) {
                   events['upcoming'].push(event);
                 } else {
@@ -103,8 +102,7 @@ function getEvents(){
                 }
 
                 // sort events.
-                events['upcoming'].sort(asorter);
-                events['past'].sort(dsorter);
+
               });
             });
           }
@@ -145,7 +143,11 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
 app.get('/', function(req, res){
-    res.render('home', {page: 'home'});
+    res.render('about', {page: 'about'});
+});
+
+app.get('/about', function(req, res){
+    res.render('about', {page: 'about'});
 });
 
 app.get('/events', function(req, res){
