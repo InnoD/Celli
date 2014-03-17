@@ -9,7 +9,9 @@
     "node-markdown": "^0.1.1",
     "ejs": "^0.8.5",
     "ejs-locals": "^1.0.2",
-    "express-partials": "^0.2.0"
+    "express-partials": "^0.2.0",
+    "http": "0.0.0",
+    "url": "^0.7.9"
   },
   "devDependencies": {},
   "scripts": {
