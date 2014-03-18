@@ -161,7 +161,8 @@ ul {
 	z-index: 10;
 	position: relative;
 	margin-left: 200px;
-	display: none;
+	display: block;
+	opacity: .7;
 
 }
 
