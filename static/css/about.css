@@ -56,6 +56,12 @@ a {
     /*border: 1px solid;*/
 }
 
+.bigmargin {
+
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
 .personContain {
     width: 175px;
     height: 220px;
@@ -87,26 +93,61 @@ a {
     top:0;
     width: 175px;
     height: 175px;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
 }
 
 .blurb {
     /*z-index:20;*/
     position:absolute;    
-    color:white;
+    color: rgba(0,0,0,0);
     font-size:16px;
     /*font-weight:bold;*/
     left:20px;
     right: 20px;
     /*vertical-align: middle;*/
     visibility: hidden;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select:none;
+    -webkit-user-select:none;
+    -o-user-select:none;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+
+
+
+   
+
 }
 
 .imageContain:hover .blurb{
     visibility: visible;
+    color: white;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+     user-select: none;
+    -moz-user-select: none;
+    -ms-user-select:none;
+    -webkit-user-select:none;
 }
 
 .imageContain:hover .profilePic {
-    opacity: .2;
+    opacity: 0.2;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
 
 }
 
