@@ -1,5 +1,5 @@
 var express = require('express'),
-   partials = require('express-partials');
+  partials = require('express-partials');
 var app = express();
 var ejs = require('ejs');
 var https = require('https');
@@ -63,7 +63,6 @@ function getEvents() {
         return;
       }
       try {
-        //TODO: CHANGE TO CURRENT TIME
         var ts = (new Date()).valueOf();
         data = JSON.parse(body);
         paging = data.paging;

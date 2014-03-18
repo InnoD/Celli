@@ -10,21 +10,9 @@ h1,h2,h3,p {
   font-family: $font-stack;
 }
 
-h1 {
-  margin-bottom: 2px;
-}
-
-h2 {
-  font-weight: 400;
-}
-
 hr {
   margin-bottom: 10px;
   margin-top: 0px;
-}
-
-p {
-  font-size: 90%;
 }
 
 a {
@@ -34,6 +22,7 @@ a {
 
 .section-header {
   h1 {
+    margin-bottom: 2px;
     margin-left: 0px;
   }
 }
@@ -43,7 +32,6 @@ a {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 
-  border: 1px solid #665544;
   padding-left: 1px;
   margin: 0 auto;
 }
@@ -56,12 +44,14 @@ a {
     background-size: cover;
     height: 266px;
     width: 717px;
+    border: 1px solid #665544;
   }  
 
   .event-info{
     padding: .5em;
     background-color: $tan;
     width: 717px;
+    border: 1px solid #665544;
 
     h1 {
       margin-top: 2px;
@@ -70,31 +60,49 @@ a {
     }
 
     h2 {
+      font-weight: 400;
       margin-top: 0px;
       margin-bottom: 0px;
       font-size: 100%;
     }
 
     p {
+      font-size: 100%;
       margin-top: 5px;
       margin-bottom: 0px;
+      font-weight: 100;
     }
   }
 }
 
 .past-event-box {
   margin-top: 5px;
+  border: 1px solid #665544;
+  cursor: pointer;
   
+  .past-event-name {
+    padding: .5em;
+    background-color: $orange;
+
+    h1 {
+      font-weight: 400;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-size: 100%;
+      text-align: left;
+    }
+  }
+
   .past-event-info {
-    margin-top: 2px;
     padding: .5em;
     background-color: $orange;
 
     h2 {
+      font-weight: 100;
       margin-top: 0px;
       margin-bottom: 0px;
       font-size: 100%;
-      text-align: center;
+      text-align: right;
     }
   }
 }
