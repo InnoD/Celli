@@ -13,7 +13,7 @@
         </div>
         <div class="pure-u-1 event-info">
           <h2><%=event.location%> | <%=event.date%> | <%=event.time%></h2>
-          <h1><a href="http://www.facebook.com/event.php?eid=<%=event.id%>"><%=event.name%></a></h1>
+          <h1><a href="http://www.facebook.com/event.php?eid=<%=event.id%>" target="_blank"><%=event.name%></a></h1>
           <p><%=event.description%></p>
         </div>
       </div>
@@ -24,9 +24,12 @@
   </div>
   <hr>
   <% for(var i in events.past) { var event = events.past[i]; %>
-  <div class="pure-g-r past-event-box">
-    <div class="pure-u-1 past-event-info">
-      <h2><a href="http://www.facebook.com/event.php?eid=<%=event.id%>"><%=event.name%> | <%=event.location%> | <%=event.date%> | <%=event.time%></a></h2>
+  <div class="pure-g-r past-event-box" onclick="window.open('http://www.facebook.com/event.php?eid=<%=event.id%>','_blank');">
+    <div class="pure-u-1-2 past-event-name">
+      <h1><%=event.name%></h1>
+    </div>
+    <div class="pure-u-1-2 past-event-info">
+      <h2><%=event.date%> | <%=event.time%></h2>
     </div>
   </div>
   <% } %>
