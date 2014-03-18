@@ -26,7 +26,6 @@ a {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: 1px solid #665544;
-  width: 717px;
   padding-left: 1px;
   margin: 0 auto; }
 
@@ -35,10 +34,12 @@ a {
   .event-box .event-photo {
     background-image: url("https://scontent-a.xx.fbcdn.net/hphotos-frc1/t1/1899961_625775874159842_500162895_n.jpg");
     background-size: cover;
-    height: 266px; }
+    height: 266px;
+    width: 717px; }
   .event-box .event-info {
     padding: .5em;
-    background-color: #e9d38f; }
+    background-color: #e9d38f;
+    width: 717px; }
     .event-box .event-info h1 {
       margin-top: 2px;
       margin-bottom: 0px;
@@ -50,3 +51,15 @@ a {
     .event-box .event-info p {
       margin-top: 5px;
       margin-bottom: 0px; }
+
+.past-event-box {
+  margin-top: 5px; }
+  .past-event-box .past-event-info {
+    margin-top: 2px;
+    padding: .5em;
+    background-color: #e1a737; }
+    .past-event-box .past-event-info h2 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-size: 100%;
+      text-align: center; }
