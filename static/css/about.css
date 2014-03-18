@@ -90,7 +90,7 @@ a {
 }
 
 .blurb {
-    z-index:20;
+    /*z-index:20;*/
     position:absolute;    
     color:white;
     font-size:16px;
