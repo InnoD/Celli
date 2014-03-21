@@ -20,7 +20,7 @@ html {
 
 body {
 	margin: 0;
-	min-height: 2160px;
+	/* min-height: 2160px; */
 }
 
 ul {
@@ -160,12 +160,98 @@ ul {
 #logo{
 	z-index: 10;
 	position: relative;
-	margin-left: 200px;
-	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 50px;
+	display: block;
+	opacity: .7;
 
+}
+
+#logo img{
+	max-width: 40%;
 }
 
 /*----------------------------------------------------------------------------*/
 
+/*---------- Footer ----------------------------------------------------------*/
+
+#footer {
+	width: 100%; 
+	height: 120px;
+	background: #a49476;
+	bottom: 0;	
+	z-index: 997;
+/*	position: absolute;
+	bottom: 0;
+	left: 0;*/
+
+	position: relative;
+}
+
+
+#footer .wrapper {
+	width: 885px; height: 95px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#line-left {
+	font-size: 15px;
+	color: #4C292D;
+	font-weight: 500;
+	text-transform: uppercase;
+	position: absolute;
+	top: 25px; left: 0;	
+}
+
+#line-left a {
+	font-size: 10px;
+	color: black;
+	font-weight: 500;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+#line-left a:hover {
+	color: #FFF;
+}
+
+#line-right {
+	font-size: 10px;
+	color: #4C292D;
+	line-height: 85px;
+	font-weight: 500;
+	text-transform: uppercase;
+	position: absolute;
+	top: 5px; right: 0;	
+}
+
+#line-right a {
+	color: #000000;
+	text-decoration: none;
+}
+
+#line-right a:hover {
+	color: #FFF;
+}
+
+#s-icon {
+	width: 48px; height: 51px;
+	background: url(img/s-icon.png);
+	margin: 0 0 0 -24px;
+	position: absolute;
+	top: -23px; left: 50%;
+}
+
+#tagline {
+	width: 288px; height: 26px;
+	background: url(img/not-your-standard-cider.png);
+	margin: -13px 0 0 -144px;
+	position: absolute;
+	top: 50%; left: 50%;
+}
+
+/*----------------------------------------------------------------------------*/
 
 
