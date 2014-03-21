@@ -177,14 +177,16 @@ ul {
 /*---------- Footer ----------------------------------------------------------*/
 
 #footer {
-	width: 100%; height: 126px;
-	background: #d3d3d3;
-	border-top: 2px solid #929292;	
+	width: 100%; 
+	height: 120px;
+	background: #a49476;
+	bottom: 0;	
 	z-index: 997;
 /*	position: absolute;
 	bottom: 0;
 	left: 0;*/
 
+	position: relative;
 }
 
 
@@ -196,7 +198,7 @@ ul {
 
 #line-left {
 	font-size: 15px;
-	color: #000000;
+	color: #4C292D;
 	font-weight: 500;
 	text-transform: uppercase;
 	position: absolute;
@@ -205,9 +207,10 @@ ul {
 
 #line-left a {
 	font-size: 10px;
-	color: #000000;
+	color: black;
 	font-weight: 500;
 	text-transform: uppercase;
+	text-decoration: none;
 }
 
 #line-left a:hover {
@@ -216,7 +219,7 @@ ul {
 
 #line-right {
 	font-size: 10px;
-	color: #000000;
+	color: #4C292D;
 	line-height: 85px;
 	font-weight: 500;
 	text-transform: uppercase;
@@ -226,6 +229,7 @@ ul {
 
 #line-right a {
 	color: #000000;
+	text-decoration: none;
 }
 
 #line-right a:hover {
