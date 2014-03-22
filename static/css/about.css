@@ -48,11 +48,17 @@ a {
     margin-top: 5px;
     margin-bottom: 0px; }
 
+.giant {
+    height: 1200px;
+    position: relative;
+}
+
 .bigContain {
     width: 750px;
     margin-right: auto;
     margin-left: auto;
     vertical-align: middle;
+    position: relative;
     /*border: 1px solid;*/
 }
 
