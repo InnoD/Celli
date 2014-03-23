@@ -220,8 +220,8 @@ ul {
 #line-right {
 	font-size: 10px;
 	color: #4C292D;
-	line-height: 85px;
-	font-weight: 500;
+/*	line-height: 85px;
+*/	font-weight: 500;
 	text-transform: uppercase;
 	position: absolute;
 	top: 5px; right: 0;	
@@ -251,6 +251,12 @@ ul {
 	position: absolute;
 	top: 50%; left: 50%;
 }
+
+#innod {
+	height: 70px;
+	opacity: .7;
+}
+
 
 /*----------------------------------------------------------------------------*/
 
