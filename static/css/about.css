@@ -50,22 +50,7 @@ a {
 
 
 /** Start of About Page CSS */
-.giant {
-    height: 1200px;
-    width: 100%;
-    position: relative;
-    max-width: 720px;
-    min-width: 653px;
-}
 
-.bigContain {
-    width: 100%;
-    margin-right: auto;
-    max-width: 720px;
-    margin-left: auto;
-    vertical-align: middle;
-    position: relative;
-}
 
 .personContain {
     width: 175px;
@@ -206,9 +191,5 @@ a {
     padding-left: 20px;
 }
 
-.title{
-    font-family: Helvetica, sans-serif;
-    font-size: 50px;
-    margin-left: 100px;
-}
+
 
