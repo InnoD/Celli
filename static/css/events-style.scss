@@ -1,13 +1,16 @@
-$font-stack: 'Kreon', serif;
+$serif-stack: 'Kreon', serif;
+$sans-stack: 'Open Sans', sans-serif;
 
 // Temporary Color Palette 
-$tan: #E9D38F;
+$tan: #ECDB9B;
+$light-tan: #EFE2B2;
 $brown: #4F3528;
 $black: #1B1814;
-$orange: #E1A737;
+// $orange: #E1A737;
+$orange: #E9C474;
 
 h1,h2,h3,p {
-  font-family: $font-stack;
+  font-family: $serif-stack;
 }
 
 hr {
@@ -20,10 +23,19 @@ a {
   text-decoration: none;
 }
 
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
 .section-header {
   h1 {
+    margin-top: 30px;
     margin-bottom: 2px;
     margin-left: 0px;
+    text-align: center;
   }
 }
 
@@ -32,31 +44,37 @@ a {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 
-  padding-left: 1px;
+  padding-left: 0px;
   margin: 0 auto;
 }
 
 .event-box {
+  // @include border-radius(5px);
   margin-top: 15px;
+  background-color: $orange;
+  // border-radius: 5px;
+  // padding: 15px;
+  // padding: 10px 15px 8px 15px;
 
   .event-photo{
-    background-image: url("https://scontent-a.xx.fbcdn.net/hphotos-frc1/t1/1899961_625775874159842_500162895_n.jpg");
-    background-size: cover;
-    height: 266px;
-    width: 717px;
-    border: 1px solid #665544;
+    // // border-radius: 5px;
+    // background-image: url("https://scontent-a.xx.fbcdn.net/hphotos-frc1/t1/1899961_625775874159842_500162895_n.jpg");
+    // background-size: cover;
+    // // height: 266px;
+    max-width: 100%;
+    height: auto;
   }  
 
   .event-info{
-    padding: .5em;
-    background-color: $tan;
+    padding: 12px;
     width: 717px;
-    border: 1px solid #665544;
+    // background-color: $orange;
 
     h1 {
-      margin-top: 2px;
+      margin-top: 0px;
       margin-bottom: 0px;
       font-weight: 400;
+      font-size: 180%;
     }
 
     h2 {
@@ -65,25 +83,31 @@ a {
       margin-bottom: 0px;
       font-size: 100%;
     }
+  }
+
+  .event-description {
+    padding: 0 12px 12px 12px;
+    width: 717px;
+    // background-color: $orange;
 
     p {
-      font-size: 100%;
-      margin-top: 5px;
+      font-family: $sans-stack;
+      font-size: 90%;
+      margin-top: 0px;
       margin-bottom: 0px;
-      font-weight: 100;
+      font-weight: 400;
     }
   }
 }
 
 .past-event-box {
   margin-top: 5px;
-  border: 1px solid #665544;
+  border-radius: 5px;
+  background-color: $light-tan;
   cursor: pointer;
+  padding: 8px 15px 8px 15px;
   
   .past-event-name {
-    padding: .5em;
-    background-color: $orange;
-
     h1 {
       font-weight: 400;
       margin-top: 0px;
@@ -94,8 +118,6 @@ a {
   }
 
   .past-event-info {
-    padding: .5em;
-    background-color: $orange;
 
     h2 {
       font-weight: 100;

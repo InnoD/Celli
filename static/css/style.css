@@ -5,7 +5,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -98,7 +98,7 @@ ul {
 	text-align: center;
 	line-height: 70px;
 
-	font-family: "Helvetica Neue", "Arial", "sans-serif";
+	font-family: "Open Sans", "Arial", "sans-serif";
 	font-size: 20px;
 	text-transform: lowercase;
 	text-decoration: none;

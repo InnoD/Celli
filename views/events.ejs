@@ -9,11 +9,14 @@
   <% } else { %>
     <% for(var i in events.upcoming) { var event = events.upcoming[i]; %>
       <div class="pure-g-r event-box">
-        <div class="pure-u-1 event-photo" style="background-image: url(<%=event.cover.source%>);">
+        <div class="pure-u-1">
+          <img class="event-photo" src="<%=event.cover.source%>">
         </div>
         <div class="pure-u-1 event-info">
-          <h2><%=event.location%> | <%=event.date%> | <%=event.time%></h2>
           <h1><a href="http://www.facebook.com/event.php?eid=<%=event.id%>" target="_blank"><%=event.name%></a></h1>
+          <h2><%=event.location%> | <%=event.date%> | <%=event.time%></h2>
+        </div>
+        <div class="pure-u-1 event-description">
           <p><%=event.description%></p>
         </div>
       </div>
