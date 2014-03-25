@@ -23,11 +23,21 @@ a {
   margin: 0 auto; }
 
 .event-box {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
   margin-top: 15px;
-  background-color: #e9c474; }
+  background-color: #e9c474;
+  width: 100%; }
   .event-box .event-photo {
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+    background-size: cover;
+    min-height: 266px;
     max-width: 100%;
-    height: auto; }
+    height: auto;
+    border: 0; }
   .event-box .event-info {
     padding: 12px;
     width: 717px; }
