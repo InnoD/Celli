@@ -9,6 +9,10 @@ a {
   color: black;
   text-decoration: none; }
 
+/* Additional margin for footer */
+div:last-child {
+  margin-bottom: 30px; }
+
 .section-header h1 {
   margin-top: 30px;
   margin-bottom: 2px;
@@ -63,11 +67,15 @@ a {
       font-weight: 400; }
 
 .past-event-box {
-  margin-top: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
   border-radius: 5px;
   background-color: #efe2b2;
   cursor: pointer;
-  padding: 8px 15px 8px 15px; }
+  padding: 8px 15px 8px 15px;
+  max-width: 717px;
+  margin: 5px auto; }
   .past-event-box .past-event-name h1 {
     font-weight: 400;
     margin-top: 0px;

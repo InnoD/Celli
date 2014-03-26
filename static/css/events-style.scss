@@ -33,6 +33,11 @@ a {
           border-radius: $radius $radius 0px 0px;
 }
 
+/* Additional margin for footer */
+div:last-child {
+  margin-bottom: 30px;
+}
+
 .section-header {
   h1 {
     margin-top: 30px;
@@ -107,11 +112,13 @@ a {
 }
 
 .past-event-box {
-  margin-top: 5px;
-  border-radius: 5px;
+  @include border-radius(5px);
+  // margin-top: 5px;
   background-color: $tan;
   cursor: pointer;
   padding: 8px 15px 8px 15px;
+  max-width: 717px;
+  margin: 5px auto;
   
   .past-event-name {
     h1 {
