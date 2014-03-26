@@ -132,6 +132,11 @@ a {
 
 }
 
+.bigContain {
+
+  border: 1px solid;
+}
+
 .storyContain {
     max-height:375px;
     height: auto;
