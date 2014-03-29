@@ -96,7 +96,14 @@ function getEvents() {
               event.time = formatDate(date);
               
               if (event.description != undefined) {
-                event.description = event.description.replace(/(\r\n|\n|\r)/gm,' ');
+                var description = "";
+                var count = 0;
+                event.description = event.description.split('\n');
+                while(description.split(" ").length < 30 && count <= 3 && event.description){
+                  description += "\n" + event.description.shift();
+                  count += 1;
+                }
+                event.description = description;
               } else {
                 event.description = 'More information to come!'
               }
