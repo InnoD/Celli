@@ -51,14 +51,24 @@ a {
 
 /** Start of About Page CSS */
 
+.giantContain {
+    overflow: hidden;
+    max-width: 675px;
+    margin-left: auto;
+    text-align: center;
+    margin-right: auto;
+}
+
 .personContain {
-    width: 175px;
     height: 220px;
     position: relative;
-    float: left;
-    margin-left: 30px;
-    margin-right: 30px;
+    vertical-align: middle;
+    display: inline-block;
     margin-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .imageContain {
@@ -138,8 +148,6 @@ a {
 }
 
 .paragraphContain {
-    /*max-height:375px;*/
-    /*height: auto;*/
     background-color: silver;
     margin-right: auto;
     margin-left: auto;
@@ -156,12 +164,10 @@ a {
 }
 
 .text {
-    /*display:block;*/
     position: relative;    
     color: #000000;
     font-size:24px;
     top: 0;
-    /*height: 100px;*/
     text-align: justify;
     padding: 1px 20px 1px 20px;
 }
