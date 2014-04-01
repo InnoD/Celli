@@ -10,8 +10,7 @@ a {
   text-decoration: none; }
 
 /* Additional margin for footer */
-div:last-child {
-  margin-bottom: 30px; }
+
 
 .section-header h1 {
   margin-top: 30px;
