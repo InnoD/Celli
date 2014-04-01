@@ -180,7 +180,7 @@ ul {
 
 #footer {
 	width: 100%; 
-	height: 120px;
+	height: 132px;
 	background: #a49476;
 	bottom: 0;	
 	z-index: 997;
@@ -262,7 +262,7 @@ ul {
     width: 120px;
     height: 112px;
     display: inline-block;
-    top: 4px;
+    top: 10px;
 }
 #celli-logo {
     width: 100%;
@@ -283,6 +283,7 @@ ul {
     display: inline-block;
     position: absolute;
     right: 180px;
+    margin-top: 7px;
 }
 #innod-logo {
     width: 100%;
