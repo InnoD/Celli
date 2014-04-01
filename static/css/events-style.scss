@@ -7,7 +7,7 @@ $brown: #4F3528;
 $black: #1B1814;
 $orange: #E9C474;
 
-h1,h2,h3,p {
+h1,h2,h3,p,a {
   font-family: $serif-stack;
 }
 
@@ -49,6 +49,14 @@ a {
 
   padding-left: 0px;
   margin: 0 auto;
+}
+
+.button {
+  @include border-radius(5px);
+  background-color: $tan;
+  padding: 5px;
+  width: 93px;
+  margin-top: 8px;
 }
 
 .event-box {

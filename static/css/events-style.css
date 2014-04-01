@@ -1,4 +1,4 @@
-h1, h2, h3, p {
+h1, h2, h3, p, a {
   font-family: "Kreon", serif; }
 
 hr {
@@ -21,6 +21,16 @@ a {
   box-sizing: border-box;
   padding-left: 0px;
   margin: 0 auto; }
+
+.button {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #efe2b2;
+  padding: 5px;
+  width: 93px;
+  margin-top: 8px; }
 
 .event-box {
   -webkit-border-radius: 5px;
