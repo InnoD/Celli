@@ -20,7 +20,7 @@
       width: '100%',
       height: constWinHeight
     });
-    $('#video').hide();
+    $('.video').hide();
 
     /*--- Nav Fixing & URL Management ----------------------------------------*/
     var nav_fixed = false;
@@ -99,7 +99,7 @@
             top: (constWinHeight - titleHeight) / 2 - 100
         });
       });
-      $('#video').css({
+      $('.video').css({
         width: videoWidth,
         height: videoHeight,
         left: videoLeft,
@@ -110,7 +110,7 @@
     /*--- Video/Title Fade ---------------------------------------------------*/
     $(window).trigger('resize');
     setTimeout(function(){ 
-      $('#video').fadeIn('slow');
+      $('.video').fadeIn('slow');
     }, 250);
   });
   /*--- End Document Ready ---------------------------------------------------*/
