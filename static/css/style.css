@@ -23,15 +23,13 @@ body {
 	/* min-height: 2160px; */
 }
 
+h1, h2, h3, p {
+  font-family: "Kreon", serif; }
+
 ul {
 	margin: 0;
 	padding: 0;
 }
-
-@font-face { 
-	font-family: 'ArcherPro-Light'; 
-	src: url('font/ArcherPro-Light.ttf') format(true-type); 
-} 
 
 .container {
 	padding: 0 15px;
