@@ -72,6 +72,7 @@ a {
 }
 
 .imageContain {
+    border-radius: 5px 5px 5px 5px;
     height:175px;
     width:175px;
     position:relative;
@@ -88,6 +89,7 @@ a {
 
 .profilePic {    
     position:absolute;
+    border-radius: 5px 5px 5px 5px;
     left:0;
     top:0;
     width: 175px;
@@ -100,6 +102,7 @@ a {
 }
 
 .blurb {
+    border-radius: 5px 5px 5px 5px;
     position:absolute;    
     color: rgba(0,0,0,0);
     font-size:16px;
@@ -119,6 +122,7 @@ a {
 }
 
 .imageContain:hover .blurb{
+    border-radius: 5px 5px 5px 5px;
     visibility: visible;
     color: white;
     -webkit-transition: all 600ms ease;
@@ -148,11 +152,13 @@ a {
 }
 
 .paragraphContain {
-    background-color: silver;
+    border-radius: 5px 5px 5px 5px;
+    /*background-color: silver;*/
     margin-right: auto;
     margin-left: auto;
     position: relative;
     max-width: 720px;
+    /*top: 1px;*/
 }
 
 #image {
@@ -160,7 +166,9 @@ a {
     width: 100%;
     height: auto;
     position: relative;
-    -webkit-filter: grayscale(100%) brightness(0.3) contrast(0.9) opacity(0.8);
+    /*-webkit-filter: grayscale(100%) brightness(0.3) contrast(0.9) opacity(0.8);*/
+    -webkit-filter: brightness(0.9) contrast(0.9) opacity(0.8);
+
 }
 
 .text {
@@ -169,7 +177,7 @@ a {
     font-size:24px;
     top: 0;
     text-align: justify;
-    padding: 1px 20px 1px 20px;
+    padding: 0 20px 1px 20px;
 }
 
 
