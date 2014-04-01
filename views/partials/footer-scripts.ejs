@@ -21,7 +21,6 @@
       height: constWinHeight
     });
     $('#video').hide();
-    $('#mini-title').hide();
 
     /*--- Nav Fixing & URL Management ----------------------------------------*/
     var nav_fixed = false;
@@ -91,13 +90,12 @@
         videoLeft = 0;
         videoTop = (constWinHeight - videoHeight);
       }
-      $('#mini-title').css({
+      $('#logo').css({
           'font-size': resizeWinWidth * (15/1920) + 'em'
       }).promise().done(function () {
-        var titleWidth = $('#mini-title').width();
-        var titleHeight = $('#mini-title').height();
-        $('#mini-title').css({
-            left: (resizeWinWidth - titleWidth) / 2,
+        var titleWidth = $('#logo').width();
+        var titleHeight = $('#logo').height();
+        $('#logo').css({
             top: (constWinHeight - titleHeight) / 2 - 100
         });
       });
@@ -110,9 +108,9 @@
     });
 
     /*--- Video/Title Fade ---------------------------------------------------*/
+    $(window).trigger('resize');
     setTimeout(function(){ 
-      $(window).trigger('resize');
-      $('#mini-title').add('#video').fadeIn('slow');
+      $('#video').fadeIn('slow');
     }, 250);
   });
   /*--- End Document Ready ---------------------------------------------------*/

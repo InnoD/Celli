@@ -1,6 +1,12 @@
 h1, h2, h3, p {
   font-family: "Kreon", serif; }
 
+.section-header h1 {
+  margin-top: 30px;
+  margin-bottom: 2px;
+  margin-left: 0px;
+  text-align: center; }
+
 h1 {
   margin-bottom: 2px; }
 
@@ -49,14 +55,24 @@ a {
 
 /** Start of About Page CSS */
 
+.giantContain {
+    overflow: hidden;
+    max-width: 675px;
+    margin-left: auto;
+    text-align: center;
+    margin-right: auto;
+}
+
 .personContain {
-    width: 175px;
     height: 220px;
     position: relative;
-    float: left;
-    margin-left: 30px;
-    margin-right: 30px;
+    vertical-align: middle;
+    display: inline-block;
     margin-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .imageContain {
@@ -135,18 +151,8 @@ a {
   border: 1px solid;
 }
 
-.storyContain {
-    max-height:375px;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-    max-width: 720px;
-}
-
-.goalsContain {
-    max-height:270px;
-    height: auto;
+.paragraphContain {
+    background-color: silver;
     margin-right: auto;
     margin-left: auto;
     position: relative;
@@ -162,14 +168,12 @@ a {
 }
 
 .text {
-    position:absolute;    
-    color: #CFCFCF;
+    position: relative;    
+    color: #000000;
     font-size:24px;
     top: 0;
-    height: 100px;
     text-align: justify;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 1px 20px 1px 20px;
 }
 
 

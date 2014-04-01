@@ -1,23 +1,8 @@
-#kickstarter-message {
-    margin-left: auto;
-    margin-right: auto;
-}
+h1, h2, h3, p {
+  font-family: "Kreon", serif; }
 
-#kickstarter-message > h1 {
-    font-family: "kreon";
-}
-#kickstarter-message > p {
-    font-family: kreon;
-    line-height: 36px;
-    font-size: 18px;
-}
-#kickstarter-message > p > a {
-    text-decoration: none;
-    color: #2fcc3a;
-}
-#kickstarter-music {
-    width: 480px;
-    height: 360px;
-    margin-left: auto;
-    margin-right: auto;
-}
+.section-header h1 {
+  margin-top: 30px;
+  margin-bottom: 2px;
+  margin-left: 0px;
+  text-align: center; }
