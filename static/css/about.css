@@ -1,6 +1,12 @@
 h1, h2, h3, p {
   font-family: "Kreon", serif; }
 
+.section-header h1 {
+  margin-top: 30px;
+  margin-bottom: 2px;
+  margin-left: 0px;
+  text-align: center; }
+
 h1 {
   margin-bottom: 2px; }
 
@@ -25,11 +31,9 @@ a {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border: 1px solid #665544;
-  width: 717px;
-  padding-left: 1px;
+  padding-left: 0px;
   margin: 0 auto; }
-
+  
 .event-box .event-photo {
   background-size: cover;
   height: 266px; }
@@ -47,7 +51,6 @@ a {
   .event-box .event-info p {
     margin-top: 5px;
     margin-bottom: 0px; }
-
 
 /** Start of About Page CSS */
 

@@ -16,7 +16,18 @@
 <!-- jQuery -->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="/js/detectmobilebrowser.js"></script>
 <script src="/js/jquery.scrollTo.min.js"></script>
+
+<!-- Hide video on mobile -->
+<script>
+  (function() {
+    if (jQuery.browser.mobile) {
+      $('splash-vid').addClass('hidden');
+      $('splash-img').removeClass('hidden');
+    }
+  })();
+</script>
 
 <!-- Bootstrap JS -->
 <script src="/js/bootstrap.min.js"></script>
