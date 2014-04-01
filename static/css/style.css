@@ -179,24 +179,24 @@ ul {
 /*---------- Footer ----------------------------------------------------------*/
 
 #footer {
+    border-top: 6px solid #C5B683;
 	width: 100%; 
 	height: 120px;
-	background: #a49476;
 	bottom: 0;	
+    background: #C6C6C6;
 	z-index: 997;
-/*	position: absolute;
-	bottom: 0;
-	left: 0;*/
-
 	position: relative;
 }
 
 
 #footer .wrapper {
-	width: 885px; height: 95px;
-	margin: 0 auto;
-	position: relative;
+	width: 75%; height: 95px;
+	margin: -47.5px auto;
+    top: 50%;
+    background: #C6C6C6;
 }
+
+/* Unused Code!
 
 #line-left {
 	font-size: 15px;
@@ -222,8 +222,8 @@ ul {
 #line-right {
 	font-size: 10px;
 	color: #4C292D;
-/*	line-height: 85px;
-*/	font-weight: 500;
+	line-height: 85px;
+	font-weight: 500;
 	text-transform: uppercase;
 	position: absolute;
 	top: 5px; right: 0;	
@@ -252,71 +252,48 @@ ul {
 	margin: -13px 0 0 -144px;
 	position: absolute;
 	top: 50%; left: 50%;
-}
+}*/
 
-#innod {
-	height: 70px;
-	opacity: .7;
-}
-#celli-logo-container {
-    width: 120px;
-    height: 112px;
-    display: inline-block;
-    top: 4px;
-}
 #celli-logo {
-    width: 100%;
-}
-#social-media {
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 240px;
-}
-#social-media > a:nth-child {
-    text-decoration: none;
+    width: 90px;
+    height: auto;
+    vertical-align: middle;
 }
 
-#innod-logo-container {
-    width: 85.2px;
-    height: 120px;
-    display: inline-block;
-    position: absolute;
-    right: 180px;
-}
-#innod-logo {
-    width: 100%;
-    height: 100%;
-}
-#innod-info {
-    display: inline-block;
-    position: absolute;
-    right: 0;
-}
-#built-by-innod {
-    display: inline-block;
-    position: absolute;
-    width: 180px;
-    font-size: 12px;
-    color: white;
-    margin-top: 54px;
-    right: 0%;
-}
 .social-media-link {
     text-decoration: none;
     color: white;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .social-media-container {
-    width: 48px;
-    height: 48px;
+    width: 75%;
     display: inline-block;
     cursor: pointer;
-    margin-right: 72px;
 }
+
 .social-media-thumb {
-    width: 100%;
+    width: 45px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.innod-logo {
+    width: 110px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.icon-container {
+    text-align: center;
+    height: 100px;
+}
+
+.center-align-helper {
+    display: inline-block;
     height: 100%;
+    vertical-align: middle;
 }
 /*----------------------------------------------------------------------------*/
 

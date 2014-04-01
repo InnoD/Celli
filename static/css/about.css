@@ -25,11 +25,9 @@ a {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border: 1px solid #665544;
-  width: 717px;
-  padding-left: 1px;
+  padding-left: 0px;
   margin: 0 auto; }
-
+  
 .event-box .event-photo {
   background-size: cover;
   height: 266px; }
