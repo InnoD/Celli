@@ -355,8 +355,12 @@ ul {
 }
 #video-container {
 	z-index: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
 }
-#video {
+.video {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -549,3 +553,205 @@ ul {
 /*----------------------------------------------------------------------------*/
 
 
+
+/** Start of About Page CSS */
+
+.giantContain {
+    overflow: hidden;
+    max-width: 675px;
+    margin-left: auto;
+    text-align: center;
+    margin-right: auto;
+}
+
+.personContain {
+    height: 220px;
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    margin-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imageContain {
+    height:175px;
+    width:175px;
+    position:relative;
+    background: black;
+    text-align: center;
+    line-height: 20px;
+}
+
+.info {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.profilePic {    
+    position:absolute;
+    left:0;
+    top:0;
+    width: 175px;
+    height: 175px;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.blurb {
+    position:absolute;    
+    color: rgba(0,0,0,0);
+    font-size:16px;
+    left:20px;
+    right: 20px;
+    visibility: hidden;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select:none;
+    -webkit-user-select:none;
+    -o-user-select:none;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+}
+
+.imageContain:hover .blurb{
+    visibility: visible;
+    color: white;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+     user-select: none;
+    -moz-user-select: none;
+    -ms-user-select:none;
+    -webkit-user-select:none;
+}
+
+.imageContain:hover .profilePic {
+    opacity: 0.2;
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    transition: all 600ms ease;
+
+}
+
+.bigContain {
+
+  border: 1px solid;
+}
+
+.paragraphContain {
+    background-color: silver;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    max-width: 720px;
+}
+
+#image {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    -webkit-filter: grayscale(100%) brightness(0.3) contrast(0.9) opacity(0.8);
+}
+
+.text {
+    position: relative;    
+    color: #000000;
+    font-size:24px;
+    top: 0;
+    text-align: justify;
+    padding: 1px 20px 1px 20px;
+}
+
+
+
+
+.section-header h1 {
+  margin-top: 30px;
+  margin-bottom: 2px;
+  margin-left: 0px;
+  text-align: center; }
+
+.pure-g-r > div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 0px;
+  margin: 0 auto; }
+
+.event-box {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #e9c474;
+  width: 100%;
+  max-width: 717px;
+  margin: 15px auto; }
+  .event-box .event-photo {
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+    background-size: cover;
+    min-height: 266px;
+    max-width: 100%;
+    height: auto;
+    border: 0; }
+  .event-box .event-info {
+    padding: 12px;
+    width: 717px; }
+    .event-box .event-info h1 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-weight: 400;
+      font-size: 180%; }
+    .event-box .event-info h2 {
+      font-weight: 400;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-size: 100%; }
+  .event-box .event-description {
+    padding: 0 12px 12px 12px;
+    width: 717px; }
+    .event-box .event-description p {
+      font-family: "Open Sans", sans-serif;
+      font-size: 90%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-weight: 400; }
+
+.past-event-box {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #efe2b2;
+  cursor: pointer;
+  padding: 8px 15px 8px 15px;
+  max-width: 717px;
+  margin: 5px auto; }
+  .past-event-box .past-event-name h1 {
+    font-weight: 400;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 100%;
+    text-align: left; }
+  .past-event-box .past-event-info h2 {
+    font-weight: 100;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 100%;
+    text-align: right; }

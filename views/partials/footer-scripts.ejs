@@ -20,7 +20,7 @@
       width: '100%',
       height: constWinHeight
     });
-    $('#video').hide();
+    $('.video').hide();
 
     /*--- Nav Fixing & URL Management ----------------------------------------*/
     var nav_fixed = false;
@@ -82,24 +82,24 @@
       var resizeWinWidth = $(window).width(),
           videoWidth = constWinHeight * (854/480),
           videoHeight = constWinHeight,
-          videoLeft = (resizeWinWidth - videoWidth),
+          videoLeft = (resizeWinWidth - videoWidth) + 20,
           videoTop = 0;
       if (videoWidth < resizeWinWidth) {
-        videoWidth = resizeWinWidth;
-        videoHeight = resizeWinWidth * (480/854);
-        videoLeft = 0;
+        videoWidth = (resizeWinWidth + 40);
+        videoHeight = (resizeWinWidth + 40) * (480/854);
+        videoLeft = -20;
         videoTop = (constWinHeight - videoHeight);
       }
-      $('#logo').css({
-          'font-size': resizeWinWidth * (15/1920) + 'em'
-      }).promise().done(function () {
+      $('#logo img').ready(function () {
         var titleWidth = $('#logo').width();
         var titleHeight = $('#logo').height();
+        console.log('titleHeight: ' + titleHeight);
+        console.log('constWinHeight: ' + constWinHeight);
         $('#logo').css({
             top: (constWinHeight - titleHeight) / 2 - 100
         });
       });
-      $('#video').css({
+      $('.video').css({
         width: videoWidth,
         height: videoHeight,
         left: videoLeft,
@@ -110,7 +110,7 @@
     /*--- Video/Title Fade ---------------------------------------------------*/
     $(window).trigger('resize');
     setTimeout(function(){ 
-      $('#video').fadeIn('slow');
+      $('.video').fadeIn('slow');
     }, 250);
   });
   /*--- End Document Ready ---------------------------------------------------*/
@@ -132,10 +132,9 @@
       scrollingTo = true;
       $.scrollTo(windowHeight - 70, 'fast', function() {
         scrollingTo = false;
-        console.log('done scrolling')
       });
     } else {
-      $(window).scrollTop(scrollPos);
+      $(window).scrollTop(windowHeight - 70);
     }
   }
 
