@@ -137,18 +137,10 @@ a {
   border: 1px solid;
 }
 
-.storyContain {
-    max-height:375px;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-    max-width: 720px;
-}
-
-.goalsContain {
-    max-height:270px;
-    height: auto;
+.paragraphContain {
+    /*max-height:375px;*/
+    /*height: auto;*/
+    background-color: silver;
     margin-right: auto;
     margin-left: auto;
     position: relative;
@@ -164,14 +156,14 @@ a {
 }
 
 .text {
-    position:absolute;    
-    color: #CFCFCF;
+    /*display:block;*/
+    position: relative;    
+    color: #000000;
     font-size:24px;
     top: 0;
-    height: 100px;
+    /*height: 100px;*/
     text-align: justify;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 1px 20px 1px 20px;
 }
 
 
