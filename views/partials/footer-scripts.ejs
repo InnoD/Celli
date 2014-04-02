@@ -5,6 +5,11 @@
   var prev_hist_state;
   var scrollingTo = false;
 
+  if (!jQuery.browser.mobile) {
+    $('#splash-vid').addClass('hidden');
+    $('#splash-img').removeClass('hidden');
+  }
+
   /*--- Document Ready -------------------------------------------------------*/
   $(document).ready( function(){
     var constWinHeight = $(window).height();
@@ -82,7 +87,7 @@
       var resizeWinWidth = $(window).width(),
           videoWidth = constWinHeight * (854/480),
           videoHeight = constWinHeight,
-          videoLeft = (resizeWinWidth - videoWidth) + 20,
+          videoLeft = (resizeWinWidth - videoWidth) / 2,
           videoTop = 0;
       if (videoWidth < resizeWinWidth) {
         videoWidth = (resizeWinWidth + 40);
