@@ -90,7 +90,8 @@
           videoHeight = constWinHeight,
           videoLeft = (resizeWinWidth - videoWidth) / 2,
           videoTop = 0,
-          logoHeight = constWinHeight / 1.5;
+          logoHeight = constWinHeight / 1.5,
+          margin = (resizeWinWidth >= 753) ? -70 : 50;
       if (videoWidth < resizeWinWidth) {
         videoWidth = (resizeWinWidth + 40);
         videoHeight = (resizeWinWidth + 40) * (480/854);
@@ -102,7 +103,7 @@
       }
       $('#logo').css({
           height: logoHeight,
-          top: ((constWinHeight - 70) - logoHeight) / 2
+          top: ((constWinHeight + margin) - logoHeight) / 2
       });
       $('.video').css({
         width: videoWidth,
