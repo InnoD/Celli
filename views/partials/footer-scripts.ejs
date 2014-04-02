@@ -85,22 +85,24 @@
     /*--- Video/Title Resizing -----------------------------------------------*/
     $(window).resize( function() {
       var resizeWinWidth = $(window).width(),
+          resizeWinHeight = $(window).height(),
           videoWidth = constWinHeight * (854/480),
           videoHeight = constWinHeight,
           videoLeft = (resizeWinWidth - videoWidth) / 2,
-          videoTop = 0;
+          videoTop = 0,
+          logoHeight = constWinHeight / 1.5;
       if (videoWidth < resizeWinWidth) {
         videoWidth = (resizeWinWidth + 40);
         videoHeight = (resizeWinWidth + 40) * (480/854);
         videoLeft = -20;
         videoTop = (constWinHeight - videoHeight);
       }
-      $('#logo img').ready(function () {
-        var titleWidth = $('#logo').width();
-        var titleHeight = $('#logo').height();
-        $('#logo').css({
-            top: (constWinHeight - titleHeight) / 2 - 100
-        });
+      if (logoHeight > (resizeWinWidth - 30)) {
+          logoHeight = resizeWinWidth / 1.2;
+      }
+      $('#logo').css({
+          height: logoHeight,
+          top: ((constWinHeight - 70) - logoHeight) / 2
       });
       $('.video').css({
         width: videoWidth,

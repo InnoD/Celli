@@ -401,8 +401,10 @@ ul {
 	opacity: .7;
 }
 
-#logo img{
-	max-width: 30%;
+#logo img {
+  height: 100%;
+  display: block;
+  margin: 0 auto;
 }
 
 /*----------------------------------------------------------------------------*/
