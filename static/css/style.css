@@ -195,7 +195,7 @@ ul {
 }
 
 .nav>li:hover {
-	background-color: #e1cccc;
+	background-color: #C5B683;
 }
 
 .nav>li>a {
@@ -211,7 +211,7 @@ ul {
 	position:relative;
 	z-index: 1000;
 	margin-bottom: 20px;
-	background: #e1a739;
+	background: #EAD68C;
 	border: none;
 }
 
@@ -229,7 +229,7 @@ ul {
 
 .navbar-collapse-skin {
     box-shadow: none !important;
-    border-top: 1px solid #000 !important;
+	  border-top: 2px solid #C5B683 !important;
 }
 
 .navbar-nav-skin {
@@ -310,7 +310,7 @@ ul {
 }
 
 .icon-bar.first-bar {
-	margin-top: 2px !important;
+	margin-top: 3px !important;
 }
 
 .navbar-menu-text {
@@ -322,7 +322,7 @@ ul {
 }
 
 .mobile-border-bottom {
-	border-bottom: 1px solid #4C292D;
+	border-bottom: 2px solid #C5B683;
 }
 
 @media (min-width:768px) {
@@ -419,72 +419,13 @@ ul {
 	position: relative;
 }
 
-
 #footer .wrapper {
-	width: 75%; height: 95px;
 	margin: -47.5px auto;
-    top: 50%;
-    background: #C6C6C6;
+  padding: 0 12.5%;
+  top: 50%;
+  background: #C6C6C6;
 	position: relative;
 }
-
-/* Unused Code!
-
-#line-left {
-	font-size: 15px;
-	color: #4C292D;
-	font-weight: 500;
-	text-transform: uppercase;
-	position: absolute;
-	top: 25px; left: 0;	
-}
-
-#line-left a {
-	font-size: 10px;
-	color: black;
-	font-weight: 500;
-	text-transform: uppercase;
-	text-decoration: none;
-}
-
-#line-left a:hover {
-	color: #FFF;
-}
-
-#line-right {
-	font-size: 10px;
-	color: #4C292D;
-	line-height: 85px;
-	font-weight: 500;
-	text-transform: uppercase;
-	position: absolute;
-	top: 5px; right: 0;	
-}
-
-#line-right a {
-	color: #000000;
-	text-decoration: none;
-}
-
-#line-right a:hover {
-	color: #FFF;
-}
-
-#s-icon {
-	width: 48px; height: 51px;
-	background: url(img/s-icon.png);
-	margin: 0 0 0 -24px;
-	position: absolute;
-	top: -23px; left: 50%;
-}
-
-#tagline {
-	width: 288px; height: 26px;
-	background: url(img/not-your-standard-cider.png);
-	margin: -13px 0 0 -144px;
-	position: absolute;
-	top: 50%; left: 50%;
-}*/
 
 #celli-logo {
     width: 90px;
@@ -512,7 +453,7 @@ ul {
 }
 
 .innod-logo {
-    width: 110px;
+    width: 105px;
     height: auto;
     vertical-align: middle;
 }
@@ -584,6 +525,18 @@ ul {
     background: black;
     text-align: center;
     line-height: 20px;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.imageContain img {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .info {
@@ -659,6 +612,11 @@ ul {
     margin-left: auto;
     position: relative;
     max-width: 720px;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
 }
 
 #image {
@@ -676,6 +634,7 @@ ul {
     top: 0;
     text-align: justify;
     padding: 1px 20px 1px 20px;
+
 }
 
 a {
