@@ -5,7 +5,7 @@
   var prev_hist_state;
   var scrollingTo = false;
 
-  if (!jQuery.browser.mobile) {
+  if (jQuery.browser.mobile) {
     $('#splash-vid').addClass('hidden');
     $('#splash-img').removeClass('hidden');
   }
