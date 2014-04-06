@@ -609,7 +609,7 @@ ul {
 }
 
 .paragraphContain {
-    background-color: silver;
+    /*background-color: #f2e7c1;*/
     margin-right: auto;
     margin-left: auto;
     position: relative;
@@ -629,12 +629,18 @@ ul {
     -webkit-filter: grayscale(100%) brightness(0.3) contrast(0.9) opacity(0.8);
 }
 
+p {
+  font-family: "Open Sans";
+  font-weight: 300;
+}
+
+
 .text {
     position: relative;    
     color: #000000;
-    font-size:24px;
+    font-size:20px;
     top: 0;
-    text-align: justify;
+    text-align: center;
     padding: 1px 20px 1px 20px;
 
 }
