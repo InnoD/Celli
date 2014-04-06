@@ -565,6 +565,7 @@ ul {
     color: rgba(0,0,0,0);
     font-size:16px;
     left:20px;
+    font-family: "Kreon";
     right: 20px;
     visibility: hidden;
     user-select: none;
@@ -638,7 +639,7 @@ p {
 .text {
     position: relative;    
     color: #000000;
-    font-size:20px;
+    font-size:18px;
     top: 0;
     text-align: center;
     padding: 1px 20px 1px 20px;
