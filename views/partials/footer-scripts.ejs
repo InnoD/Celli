@@ -10,18 +10,16 @@
     $('#splash-img').removeClass('hidden');
   }
 
+  var constWinHeight;
+  var mobileNavVisible;
+  var navMargin;
   /*--- Document Ready -------------------------------------------------------*/
   $(document).ready( function(){
-    var constWinHeight = $(window).height(),
-        mobileNavVisible = ($('#main-nav').css('display') == "none");
+    constWinHeight = $(window).height();
+    mobileNavVisible = ($('#main-nav').css('display') == "none");
 
     if (mobileNavVisible) {
-        /*var winWidth = $(window).width();*/
-        /*if (winWidth > constWinHeight) {*/
-        /**/
-        /*} else {*/
-            constWinHeight *= 0.75;
-       /* }*/
+        constWinHeight *= 0.75;
     }
 
     /*--- URL Management & Scroll Position -----------------------------------*/
@@ -99,9 +97,9 @@
           videoHeight = constWinHeight,
           videoLeft = (resizeWinWidth - videoWidth) / 2,
           videoTop = 0,
-          logoHeight = constWinHeight / 1.7,
-          margin = (mobileNavVisible) ? 50 : -70;
+          logoHeight = constWinHeight / 1.7;
       mobileNavVisible = ($('#main-nav').css('display') == "none");
+      navMargin = (mobileNavVisible) ? 50 : -70;
       if (videoWidth < resizeWinWidth) {
         videoWidth = (resizeWinWidth + 40);
         videoHeight = (resizeWinWidth + 40) * (480/854);
@@ -113,7 +111,7 @@
       }
       $('#logo').css({
           height: logoHeight,
-          top: ((constWinHeight + margin) - logoHeight) / 2
+          top: ((constWinHeight + navMargin) - logoHeight) / 2
       });
       $('.video').css({
         width: videoWidth,
@@ -143,14 +141,13 @@
   });
 
   var scrollToContent = function(scrollPos) {
-    var windowHeight = $(window).height();
-    if (scrollPos < windowHeight) {
+    if (scrollPos < constWinHeight) {
       scrollingTo = true;
-      $.scrollTo(windowHeight - 70, 'fast', function() {
+      $.scrollTo(constWinHeight + navMargin, 'fast', function() {
         scrollingTo = false;
       });
     } else {
-      $(window).scrollTop(windowHeight - 70);
+      $(window).scrollTop(constWinHeight + navMargin);
     }
   }
 
