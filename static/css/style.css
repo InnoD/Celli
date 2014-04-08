@@ -563,9 +563,10 @@ ul {
 .blurb {
     position:absolute;    
     color: rgba(0,0,0,0);
-    font-size:16px;
+    font-size:12px;
     left:20px;
-    font-family: "Kreon";
+    font-family: "Open Sans";
+    font-weight: 300;
     right: 20px;
     visibility: hidden;
     user-select: none;
