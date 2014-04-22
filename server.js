@@ -128,6 +128,12 @@ function getEvents() {
               // Sort Upcoming & Past Events
               events['upcoming'].sort(asorter);
               events['past'].sort(dsorter);
+
+              console.log(paging['next']);
+
+              if (paging['next'] != undefined) {
+                https.get(paging['next'], grab_events);
+              }
             });
           });
         }
@@ -144,10 +150,6 @@ function getEvents() {
 
   // Glitch with FB doesn't pull all events in one go.
   // This call pulls the remaining events.
-  https.get({
-    host: 'graph.facebook.com',
-    path: '/466093040128127/events?access_token=1399949440268336|cb5a39d0a773588e4e57eac8e5641307&limit=25&after=Mjk3MDEyNjYwNDQ2Nzcx'
-  }, grab_events);
 }
 
 getEvents();
