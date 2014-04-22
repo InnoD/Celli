@@ -140,18 +140,14 @@ function getEvents() {
   https.get({
     host: 'graph.facebook.com',
     path: '/466093040128127/events?access_token=1399949440268336|cb5a39d0a773588e4e57eac8e5641307'
-  }, function(res){
-    grab_events(res);
-  });
+  }, grab_events);
 
   // Glitch with FB doesn't pull all events in one go.
   // This call pulls the remaining events.
   https.get({
     host: 'graph.facebook.com',
     path: '/466093040128127/events?access_token=1399949440268336|cb5a39d0a773588e4e57eac8e5641307&limit=25&after=Mjk3MDEyNjYwNDQ2Nzcx'
-  }, function(res){
-    grab_events(res);
-  });
+  }, grab_events);
 }
 
 getEvents();
