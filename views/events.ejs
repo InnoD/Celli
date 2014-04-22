@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<!-- <link rel="stylesheet" type="text/css" href="css/events-style.css" /> -->
 <body>
   <div class="section-header">
     <h1>Upcoming Events &amp Performances</h1>
   </div>
   <hr>
   <% if (events.upcoming.length === 0) { %> 
-    <p>There are no upcoming events.</p>
+    <p>There are currently no upcoming events. Check out our <a href="https://www.facebook.com/WeAreCelli" target="_blank">Facebook Page</a>!</p>
   <% } else { %>
     <% for(var i in events.upcoming) { var event = events.upcoming[i]; %>
       <div class="pure-g-r event-box">
